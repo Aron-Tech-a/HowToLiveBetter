@@ -41,6 +41,8 @@ AI 助手 skill 支持 Claude Code 和 Codex。装上后直接问「替朋友担
 
 [English（The Evidence-Based Life）](https://parveen0029.github.io/The-Evidence-Based-Life/)，[parveen0029](https://github.com/parveen0029) 维护的另一份英文翻译（[仓库](https://github.com/parveen0029/The-Evidence-Based-Life)）
 
+[Tiếng Việt](https://chuanman2707.github.io/HowToLiveBetter/)，[chuanman2707](https://github.com/chuanman2707) 维护的越南语翻译（[仓库](https://github.com/chuanman2707/HowToLiveBetter)）
+
 </td></tr>
 <tr><td align="right"><b>衍生工具</b></td><td align="left">
 
