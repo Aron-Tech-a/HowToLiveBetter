@@ -142,7 +142,7 @@ html.dark .switch .sun{display:none} html.dark .switch .moon{display:block}
 .toc-sub a{display:flex;gap:6px;padding:3px 0 3px 12px;margin-left:-1px;border-left:1px solid transparent;font-size:13px;line-height:20px;color:var(--t2);text-decoration:none;transition:color .2s}
 .toc-sub a:hover{color:var(--t1);text-decoration:none}
 .toc-sub a i{font-style:normal;flex:none;min-width:1.5em;color:var(--t3);font-variant-numeric:tabular-nums}
-.toc-sub a span{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.toc-sub a span{display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .toc-sub a.on{color:var(--brand-1);border-left-color:var(--brand-1)}
 .toc-sub a.on i{color:var(--brand-1)}
 .toc-none{margin:0;padding:3px 0 3px 12px;font-size:13px;line-height:20px;color:var(--t3)}
@@ -547,7 +547,7 @@ function parseReadme(md){
     if (/^#{1,2} /.test(line)) { flush(); sec = null; continue; }
     if (!sec) continue;
     if ((m = /^### (\d+)\. (.+)$/.exec(line))) { flush(); entry = {sec:sec.n, n:m[1], title:m[2].trim(), cost:'', human:'', gain:'', grade:'', src:'', note:'', money:'', time:'', will:'', level:'', lens:''}; continue; }
-    if ((m = /^<!--\s*成本标签:\s*(.*?)\s*-->/.exec(line)) && entry){
+    if ((m = /^\x3c!--\s*成本标签:\s*(.*?)\s*-->/.exec(line)) && entry){
       for (const kv of m[1].split(/\s+/)){ const [k,v] = kv.split('='); if(k==='钱') entry.money=v; if(k==='时间') entry.time=v; if(k==='毅力') entry.will=v; if(k==='收益') entry.level=v; if(k==='口径') entry.lens=v; }
       continue;
     }
