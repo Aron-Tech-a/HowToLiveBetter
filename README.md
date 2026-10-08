@@ -40,7 +40,7 @@ AI 助手 skill 支持 Claude Code 和 Codex。装上后直接问「替朋友担
 </td></tr>
 <tr><td align="right"><b>交流</b></td><td align="left">
 
-QQ 群 582670354
+[QQ 群 582670354](https://qm.qq.com/q/P1RNw3Rnqg)（点击加群）
 
 </td></tr>
 <tr><td align="right"><b>其他语言</b></td><td align="left">
