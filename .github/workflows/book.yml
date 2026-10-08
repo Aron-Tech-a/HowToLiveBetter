@@ -66,6 +66,18 @@ jobs:
           node-version: 22
       - run: node tools/check-plain.mjs
 
+  # 拆分规则一致性检查：超长收益、备注和来源的拆分规则有两份（tools/lib/split-items.mjs 给 EPUB、PDF，
+  # index.html 里 <split-rules> 那段给网页和离线版），只改了一边就会四个出口长得不一样。理由同上，不挡发布。
+  split:
+    name: 拆分规则一致性检查
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tools/check-split.mjs
+
   # 统计数字检查：README、index.html、og.html 里的条目数、A/B/C 数、链接数等是否和 book/ 对得上。
   # 本地 sync-stats.mjs 要记得跑才会更新，网页上直接合并的 PR 完全经过不了它。理由同上，不挡发布。
   # 只查不改：让 CI 往 main 推提交会和本地分叉，而且 Ubuntu 没有微软雅黑，og.png 截不对。
